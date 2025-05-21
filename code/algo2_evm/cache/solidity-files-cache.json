@@ -1,0 +1,114 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/robert/school/master/thesis/code/algo2_evm/contracts/crypto_datamodel.sol": {
+      "lastModificationDate": 1747250386528,
+      "contentHash": "828aa074416acd7b5a6289912f93dfd6",
+      "sourceName": "contracts/crypto_datamodel.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": []
+    },
+    "/home/robert/school/master/thesis/code/algo2_evm/contracts/main.sol": {
+      "lastModificationDate": 1747250379807,
+      "contentHash": "42fa13664447bd5cba25c67bf2738a2b",
+      "sourceName": "contracts/main.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./datamodel.sol",
+        "./crypto_datamodel.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "Algo2ProxyReencryption"
+      ]
+    },
+    "/home/robert/school/master/thesis/code/algo2_evm/contracts/datamodel.sol": {
+      "lastModificationDate": 1747241567367,
+      "contentHash": "2934b239177ef7a51e07bad588eab895",
+      "sourceName": "contracts/datamodel.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./crypto_datamodel.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": []
+    }
+  }
+}
