@@ -2,3 +2,9 @@ venv*
 artifacts*
 node_modules*
 __pycache__*
+
+# EVM files
+code/algo2_evm/cache/.hardhat-network-instances.json
+code/algo2_evm/cache/solidity-files-cache.json
+code/algo2_evm/ignition/deployments/chain-31337/journal.jsonl
+
