@@ -2,9 +2,14 @@ from .isshiki_2013 import Isshiki, Isshiki_PublicParameters, Isshiki_PrivateKey,
 
 
 class PrencEncryptor:
-    def __init__(self, public_params: Isshiki_PublicParameters, secret_key: Isshiki_PrivateKey) -> None:
+    def __init__(self, public_params: Isshiki_PublicParameters, secret_key: Isshiki_PrivateKey | None = None) -> None:
         self._algo: Isshiki = Isshiki(public_params)
-        self._secret_key: Isshiki_PrivateKey = secret_key
+
+        self._secret_key: Isshiki_PrivateKey
+        if secret_key is None:
+            self._secret_key = self._algo.key_gen()
+        else:
+            self._secret_key = secret_key
 
     @property
     def public_key(self) -> Isshiki_PublicKey:

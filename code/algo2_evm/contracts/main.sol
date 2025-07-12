@@ -6,6 +6,10 @@ import "./datamodel.sol";
 import "./crypto_datamodel.sol";
 
 contract Algo2ProxyReencryption {
+    // prime number the elliptic curves are in
+    uint256 constant p = 21888242871839275222246405745257275088696311157297823662689037894645226208583;
+
+
     mapping (uint => bool) used_request_ids;
 
     FilesPendingIDRequest private user_file_id_reqs;
@@ -255,9 +259,181 @@ contract Algo2ProxyReencryption {
     }
 
 
-    // TODO: request re-enc
-    // TODO: upload re-enc info for file
-    // TODO: retrieve upload info
+// ----------------------------------------------------------------------------
+// Access Methods to request file share, service and retrieve the re-encryption key
+// ----------------------------------------------------------------------------
+
+    function request_file_share(address client, uint[] memory client_prenc_pk, address file_owner, uint file_id) public {
+        /**
+         * Clients who want a file to be shared to them call this function to start the sharing process.
+         *
+         * @param client: address of the client who wants the file shared
+         * @param client_prenc_pk: proxy re-encryption public key (secret key known by the client) as uint[] where the
+         *  elements expected are: [pk1_00, pk1_01, pk1_10, pk1_11, pk2_0, pk2_1, pk3_00, pk3_01, pk3_10, pk3_11]; pk1
+         *  in G2, pk2 in G1, pk3 in G2
+         * @param file_owner: address of the owner of the file
+         * @param file_id: unique identifier of the file that we want to be shared
+         */
+        // check the file actually exists
+        require(stored_files.user_file_id_exists[file_owner][file_id] == true, "File Owner Address and File ID pair does not reference an uploaded file.");
+
+        PrencPublicKey memory prenc_pk = PrencPublicKey({
+            pk1_00: client_prenc_pk[0],
+            pk1_01: client_prenc_pk[1],
+            pk1_10: client_prenc_pk[2],
+            pk1_11: client_prenc_pk[3],
+
+            pk2_0: client_prenc_pk[4],
+            pk2_1: client_prenc_pk[5],
+
+            pk3_00: client_prenc_pk[6],
+            pk3_01: client_prenc_pk[7],
+            pk3_10: client_prenc_pk[8],
+            pk3_11: client_prenc_pk[9]
+        });
+
+        ClientShareRequest memory share_request = ClientShareRequest({
+            file_owner: file_owner,
+            file_id: file_id,
+            client: client,
+            client_prenc_pk: prenc_pk
+        });
+
+        re_enc_reqs.requests.push(share_request);
+        re_enc_reqs.client_file_requests[client][file_id] = share_request;
+    }
+
+    function get_pending_share_requests() public view returns (address[] memory, address[] memory, uint[] memory, uint[] memory) {
+        /**
+         * DPCN Algo 2 calls this method periodically to check what file share requests are pending in the EVM.
+         *
+         * @return: lists of elements that construct the individual requests
+         * - client address (1 entry)
+         * - file owner address (1 entry)
+         * - file id (1 entry)
+         * - proxy re-encryption public key of the client (10 entries)
+         *
+         * Example: for 2 requests, the sizes of the returned array sizes are: (2, 2, 2, 20)
+         */
+
+        uint no_pending_share_reqs = re_enc_reqs.requests.length;
+        address[] memory ret_client_addresses = new address[](no_pending_share_reqs);
+        address[] memory ret_file_owner_addresses = new address[](no_pending_share_reqs);
+        uint[] memory ret_file_ids = new uint[](no_pending_share_reqs);
+        uint[] memory ret_client_prenc_pks = new uint[](no_pending_share_reqs * 10);
+
+        for (uint i = 0; i < no_pending_share_reqs; ++i) {
+            ret_client_addresses[i] = re_enc_reqs.requests[i].client;
+            ret_file_owner_addresses[i] = re_enc_reqs.requests[i].file_owner;
+            ret_file_ids[i] = re_enc_reqs.requests[i].file_id;
+
+            ret_client_prenc_pks[i * 10 + 0] = re_enc_reqs.requests[i].client_prenc_pk.pk1_00;
+            ret_client_prenc_pks[i * 10 + 1] = re_enc_reqs.requests[i].client_prenc_pk.pk1_01;
+            ret_client_prenc_pks[i * 10 + 2] = re_enc_reqs.requests[i].client_prenc_pk.pk1_10;
+            ret_client_prenc_pks[i * 10 + 3] = re_enc_reqs.requests[i].client_prenc_pk.pk1_11;
+
+            ret_client_prenc_pks[i * 10 + 4] = re_enc_reqs.requests[i].client_prenc_pk.pk2_0;
+            ret_client_prenc_pks[i * 10 + 5] = re_enc_reqs.requests[i].client_prenc_pk.pk2_1;
+
+            ret_client_prenc_pks[i * 10 + 6] = re_enc_reqs.requests[i].client_prenc_pk.pk3_00;
+            ret_client_prenc_pks[i * 10 + 7] = re_enc_reqs.requests[i].client_prenc_pk.pk3_01;
+            ret_client_prenc_pks[i * 10 + 8] = re_enc_reqs.requests[i].client_prenc_pk.pk3_10;
+            ret_client_prenc_pks[i * 10 + 9] = re_enc_reqs.requests[i].client_prenc_pk.pk3_11;
+        }
+
+        return (ret_client_addresses, ret_file_owner_addresses, ret_file_ids, ret_client_prenc_pks);
+    }
+
+    function respond_with_re_encryption_key(
+        address client,
+        uint file_id,
+        uint[2] memory re_enc_key
+    ) public {
+        /**
+         * DPCN Algo 2 transacts this method to respond with the generated re-encryption key which is associated with
+         * a share request for the client on the file_id.
+         *
+         * @param client: address of the client who wants the file shared
+         * @param file_id: unique identifier of the file was requested to be shared
+         * @param re_enc_key: generated re-encryption key which is an element in G1 (2 uint elements)
+         */
+
+        // check the request was actually made
+        ClientShareRequest memory share_request = re_enc_reqs.client_file_requests[client][file_id];
+        require(share_request.file_id == file_id && share_request.client == client, "Re-encryption key response is not associated with a share request.");
+        require(stored_files.user_file_id_exists[share_request.file_owner][file_id] == true, "File requested to be shared is no longer uploaded / available.");
+
+        // retrieve the file data and construct the re-encryption key structure
+        FileUploaded memory file_data = stored_files.cloud[share_request.file_owner][file_id];
+        PrencReencryptionKey memory constructed_re_enc_key = PrencReencryptionKey({
+            renc_0: re_enc_key[0],
+            renc_1: re_enc_key[1]
+        });
+
+        // check the validity of the re-encryption key
+        bool re_key_checks_out = _check_re_encryption_key(
+            constructed_re_enc_key,
+            [
+                file_data.encryption_data.prenc_public_key.pk1_00,
+                file_data.encryption_data.prenc_public_key.pk1_01,
+                file_data.encryption_data.prenc_public_key.pk1_10,
+                file_data.encryption_data.prenc_public_key.pk1_11
+            ],
+            [
+                share_request.client_prenc_pk.pk2_0,
+                share_request.client_prenc_pk.pk2_1
+            ],
+            [
+                file_data.encryption_data.public_parameters.g_00,
+                file_data.encryption_data.public_parameters.g_01,
+                file_data.encryption_data.public_parameters.g_10,
+                file_data.encryption_data.public_parameters.g_11
+            ]
+        );
+        if (re_key_checks_out == false) {
+            // the check failed but still remove the share request even if it was not serviced correctly
+            _remove_file_share_pending_request(client, file_id);
+            require(false, "Re-encryption key verification failed, it is considered invalid!");
+        }
+
+        // store the re-encryption key
+        FileReencryptionInformation memory shared_file_info = FileReencryptionInformation({
+            file_id: file_id,
+            owner: share_request.file_owner,
+            client: client,
+            re_encryption_key: constructed_re_enc_key,
+            owner_prenc_public_key: file_data.encryption_data.prenc_public_key,
+            client_prenc_public_key: share_request.client_prenc_pk
+        });
+        shared_files.clients[client][file_id] = shared_file_info;
+        shared_files.files[client][file_id] = true;
+
+        // remove the share request
+        _remove_file_share_pending_request(client, file_id);
+    }
+
+    function get_file_share_result(address client, uint file_id) public view returns (bool, uint[2] memory re_enc_key) {
+        /**
+         * Method to be called to obtain the re-encryption key for a file share request if it was submitted and
+         * processed.
+         *
+         * @param client: the client that initiated the file share request
+         * @param field_id: the id of the file which was shared
+         *
+         * @return: a tuple of the call result, the first element is a bool representing if the call succeeded and the
+         * second is a 2 element array containing the re-encryption key (valid only if the call succeeded)
+         */
+        // the file was not shared for this user
+        if (shared_files.files[client][file_id] != true) {
+            return (false, re_enc_key);
+        }
+
+        FileReencryptionInformation memory shared_file_info = shared_files.clients[client][file_id];
+        re_enc_key[0] = shared_file_info.re_encryption_key.renc_0;
+        re_enc_key[1] = shared_file_info.re_encryption_key.renc_1;
+
+        return (true, re_enc_key);
+    }
 
 // ----------------------------------------------------------------------------
 // Constructor
@@ -329,5 +505,67 @@ contract Algo2ProxyReencryption {
 
             break;
         }
+    }
+
+    function _check_re_encryption_key(PrencReencryptionKey memory re_key, uint[4] memory owner_prenc_pk1, uint[2] memory client_prenc_pk2, uint[4] memory generator_g) private view returns (bool) {
+        /**
+         * Check with the pairing of elliptic curves precompile the formula: e(pki_1, re_key) == e(g, pkj_2)
+         * @param re_key: re-encryption key in G2
+         * @param owner_prenc_pk1: first element of the proxy re-encryption public key which is in G1
+         * @param client_prenc_pk2: second element of the proxy re-encryption public key which is in G2
+         * @param generator_g: the chosen generator from the public parameters which is an element in G1
+         *
+         * @return: true if the pairing checks out
+         */
+        // verification, precompile input:
+        // - re_key.x
+        // - re_key.y
+        // - pki_1.x_imaginary
+        // - pki_1.x_real
+        // - pki_1.y_imaginary
+        // - pki_1.y_real
+        // - pkj_2.x
+        // - (p - pkj_2.y) % p
+        // - g.x_imaginary
+        // - g.x_real
+        // - g.y_imaginary
+        // - g.y_real
+        // TODO: check the order is fine, not suer about the imaginary part coming before the real part
+        uint256[12] memory input = [
+            re_key.renc_0, re_key.renc_1,
+            owner_prenc_pk1[1], owner_prenc_pk1[0], owner_prenc_pk1[3], owner_prenc_pk1[2],
+            client_prenc_pk2[0], (p - client_prenc_pk2[1]) % p,
+            generator_g[1], generator_g[0], generator_g[3], generator_g[2]
+        ];
+        uint input_size = input.length * 32;
+        uint[1] memory output;
+
+        assembly {
+            if iszero(staticcall(gas(), 8, input, input_size, output, 0x20)) {
+                revert(0, 0)
+            }
+        }
+
+        // TODO: check the precompile returns 1 if all is fine
+        return output[0] == 1;
+    }
+
+    function _remove_file_share_pending_request(address client, uint file_id) private {
+
+        ClientShareRequest[] storage share_requests = re_enc_reqs.requests;
+        uint no_share_requests = share_requests.length;
+
+        for (uint i = 0; i < no_share_requests; ++i) {
+            if (share_requests[i].client != client || share_requests[i].file_id != file_id) {
+                continue;
+            }
+            // found the index at which the request_id is present
+            share_requests[i] = share_requests[no_share_requests - 1];
+            share_requests.pop();
+
+            break;
+        }
+
+        delete re_enc_reqs.client_file_requests[client][file_id];
     }
 }

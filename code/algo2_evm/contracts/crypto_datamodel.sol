@@ -62,7 +62,7 @@ struct PrencReencryptionKey {
 }
 
 
-// cyphertext of the symmetric key, goog for direct decryption or re-encryption (obtained by algorithm ENC2)
+// cyphertext of the symmetric key, good for direct decryption or re-encryption (obtained by algorithm ENC2)
 struct PrencCyphertext {
     uint[23] data;
 }

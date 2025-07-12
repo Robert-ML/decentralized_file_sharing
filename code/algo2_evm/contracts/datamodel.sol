@@ -64,7 +64,7 @@ struct StoredFiles {
 
     // user_id -> file_ids (list of all files stored per user)
     mapping (address => uint[]) users_files;
-    // user_id -> file_id -> ?used
+    // user_id -> file_id -> used
     mapping (address => mapping (uint => bool)) user_file_id_exists;
 }
 
@@ -73,36 +73,38 @@ struct StoredFiles {
 // File to be shared
 // ----------------------------------------------------------------------------
 struct ClientShareRequest {
+    address file_owner;
     uint file_id;
-    address client_id; // the initiator of the request
-    PrencPublicKey prenc_public_key;
+    address client; // the initiator of the request
+    PrencPublicKey client_prenc_pk;
 }
 
 // Pending requests for a file's re-encryption key to be obtained
 struct PendingReencryption {
     ClientShareRequest[] requests;
+
+    // client_id -> file_id -> request details
+    mapping (address => mapping (uint => ClientShareRequest)) client_file_requests;
 }
 
 
 // ----------------------------------------------------------------------------
-// Stored files
+// Shared files
 // ----------------------------------------------------------------------------
 
 struct FileReencryptionInformation {
     uint file_id;
     address owner;
     address client;
-    PrencReencryptionKey reencryption_key;
+    PrencReencryptionKey re_encryption_key;
     PrencPublicKey owner_prenc_public_key;
     PrencPublicKey client_prenc_public_key;
 }
 
-// Store the information about:
-// - the clients and what files they have shared access to
-// - the files and who has access to them
+// Store the information about the shared files:
 struct FilesShared {
-    // clients -> shared files -> shared file data
+    // clients -> file_id -> shared file data
     mapping (address => mapping (uint => FileReencryptionInformation)) clients;
-    // shared files -> clients -> if shared or not
-    mapping(uint => mapping (address => bool)) files;
+    // clients -> file_id -> if shared or not
+    mapping (address => mapping (uint => bool)) files;
 }

@@ -125,10 +125,64 @@ class Isshiki_PublicKey:
             ),
         )
 
+    def to_list(self) -> list[int]:
+        return [
+            int(str(self.pk1[0].coeffs[0])),
+            int(str(self.pk1[0].coeffs[1])),
+            int(str(self.pk1[1].coeffs[0])),
+            int(str(self.pk1[1].coeffs[1])),
+
+            int(str(self.pk2[0].n)),
+            int(str(self.pk2[1].n)),
+
+            int(str(self.pk3[0].coeffs[0])),
+            int(str(self.pk3[0].coeffs[1])),
+            int(str(self.pk3[1].coeffs[0])),
+            int(str(self.pk3[1].coeffs[1])),
+        ]
+
+    @classmethod
+    def from_list(cls, container: list[int]) -> Self:
+        return cls(
+            pk1=(
+                FQ2([
+                    container[0],
+                    container[1],
+                ]),
+                FQ2([
+                    container[2],
+                    container[3],
+                ]),
+            ),
+            pk2=(FQ(container[4]), FQ(container[5])),
+            pk3=(
+                FQ2([
+                    container[6],
+                    container[7],
+                ]),
+                FQ2([
+                    container[8],
+                    container[9],
+                ]),
+            ),
+        )
+
 
 @dataclass
 class Isshiki_ReEncKey:
-    rekey: Point2D
+    rekey: tuple[FQ, FQ]
+
+    def to_list(self) -> list[int]:
+        return [
+            int(str(self.rekey[0])),
+            int(str(self.rekey[1])),
+        ]
+
+    @classmethod
+    def from_list(cls, container: list[int]) -> Self:
+        return cls(
+            rekey=(FQ(container[0]), FQ(container[1])),
+        )
 
 
 @dataclass
@@ -489,7 +543,7 @@ class Isshiki:
         ski1: int = ski.sk1
         one_over_ski1 = pow(ski1, -1, self.Q) % self.Q
 
-        rekey: Point2D = bn128_curve.multiply(pkj2, one_over_ski1)
+        rekey: tuple[FQ, FQ] = bn128_curve.multiply(pkj2, one_over_ski1)
 
         return Isshiki_ReEncKey(rekey)
 

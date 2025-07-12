@@ -18,9 +18,23 @@ class MetricType(StrEnum):
     # - DPCN
     A2_DPCN_STORAGE_USED = "algo_2-dpcn-storage_used_by_identities"
     A2_DPCN_SERVICED_REQUESTS = "algo_2-dpcn-serviced_requests"
+    A2_DPCN_SHARE_REQUESTS = "algo_2-dpcn-share_requests"
 
     # - Client
     A2_CLIENT_FILE_UPLOAD = "algo_2-client-file_upload"
+    A2_CLIENT_SHARE_REQUEST = "algo_2-client-share_request"
+
+
+    # Algo 2:
+    # - DPCN
+    A3_DPCN_SERVICED_REQUESTS = "algo_3-dpcn-serviced_requests"
+    A3_DPCN_SHARE_REQUESTS = "algo_3-dpcn-share_requests"
+
+    # - Client
+    A3_CLIENT_REGISTER_REQUEST = "algo_3-client-register_request"
+    A3_CLIENT_FILE_UPLOAD = "algo_3-client-file_upload"
+    A3_CLIENT_SHARE_REQUEST = "algo_3-client-share_request"
+
 
     def get_file_name(self) -> str:
         return f"{self.value}.json"
@@ -73,7 +87,7 @@ class MetricsCollector(metaclass=SingletonMeta):
         if len(metric_values) == 0:
             return
 
-        file_name: str = f"{metric_values[0].get_file_name()}.json"
+        file_name: str = metric_values[0].get_file_name()
         file_path: Path = _METRICS_FOLDER / file_name
 
         output_list: list[dict[str, int | float | str]] = []

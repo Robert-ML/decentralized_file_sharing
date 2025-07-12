@@ -5,12 +5,10 @@ from collections import defaultdict
 from dataclasses import dataclass
 from datetime import timedelta
 from hexbytes import HexBytes
-from pprint import pformat
 from typing import Coroutine
 from typing_extensions import override
 
-from eth_account.datastructures import SignedTransaction
-from web3.types import Nonce, TxParams, TxReceipt
+from web3.types import TxReceipt
 from shared.python.crypto.prenc.isshiki_2013 import to_int_array
 
 from core.common_vars import CommonVars

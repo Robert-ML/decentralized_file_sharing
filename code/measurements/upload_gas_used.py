@@ -103,21 +103,20 @@ def prepare_data(loaded_data: LoadedData) -> PreparedData:
 def plot_data(data: PreparedData) -> None:
     # Plotting
     plt.figure(figsize=(10, 5))
-    plt.plot(data.indexes, data.values, marker='o', linestyle='-', color='blue', label='Y values')
+    plt.plot(data.indexes, data.values, marker='o', linestyle='-', color='blue', label='Gas Used')
 
     # Add a horizontal line showing the mean for reference
     mean_y = sum(data.values) / len(data.values)
-    plt.axhline(mean_y, color='red', linestyle='--', label=f'Mean = {mean_y:.2f}')
+    plt.axhline(mean_y, color='red', linestyle='--', label=f'Mean = {mean_y:.2e}')
 
     # Add labels and title
-    plt.xlabel('Index')
-    plt.ylabel('Value')
-    plt.title('Y values vs Index (Showing Constancy)')
+    plt.xlabel('Files Uploaded')
+    plt.ylabel('Gas Used')
+    # plt.title('Gas Used vs Number of Files Uploaded (Showing Constancy)')
     plt.legend()
     plt.grid(True)
 
     plt.tight_layout()
-    plt.show()
     plt.show()
 
 

@@ -1,18 +1,18 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/robert/school/master/thesis/code/algo2_evm/contracts/crypto_datamodel.sol": {
-      "lastModificationDate": 1747250386528,
+    "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/algo2_evm/contracts/crypto_datamodel.sol": {
+      "lastModificationDate": 1749760477540,
       "contentHash": "828aa074416acd7b5a6289912f93dfd6",
       "sourceName": "contracts/crypto_datamodel.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -35,18 +35,18 @@
       ],
       "artifacts": []
     },
-    "/home/robert/school/master/thesis/code/algo2_evm/contracts/main.sol": {
-      "lastModificationDate": 1747250379807,
-      "contentHash": "42fa13664447bd5cba25c67bf2738a2b",
+    "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/algo2_evm/contracts/main.sol": {
+      "lastModificationDate": 1750027443353,
+      "contentHash": "67ed2ee9c0d81b82ad5a12655b6eaed5",
       "sourceName": "contracts/main.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -74,18 +74,18 @@
         "Algo2ProxyReencryption"
       ]
     },
-    "/home/robert/school/master/thesis/code/algo2_evm/contracts/datamodel.sol": {
-      "lastModificationDate": 1747241567367,
-      "contentHash": "2934b239177ef7a51e07bad588eab895",
+    "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/algo2_evm/contracts/datamodel.sol": {
+      "lastModificationDate": 1750023946747,
+      "contentHash": "04b19ca0ebe6d0f7166eea537b3989e7",
       "sourceName": "contracts/datamodel.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [

@@ -1,4 +1,6 @@
-import math, secrets
+import math
+import secrets
+
 
 def get_secure_pseudo_rand_in_range(range: int) -> int:
 
@@ -23,7 +25,7 @@ def get_secure_pseudo_rand_in_range(range: int) -> int:
         try_no += 1
 
     if(res == None):
-        print("---WTF!!!---", end = "\n\n")
+        print("---???!!!---", end = "\n\n")
 
     return res
 

@@ -9,6 +9,7 @@ from typing import Coroutine
 from core.common_vars import CommonVars
 from core.db import DB
 from services.algo2.file_requests_servicer import FileIdRequestsServicer
+from services.algo2.share_requests_servicer import ShareRequestsServicer
 from shared.python.evm.algorithms import Algorithm
 from shared.python.evm.connection import EvmConnection
 from shared.python.utils.print_quicks import get_line
@@ -56,17 +57,35 @@ def clean_up() -> None:
     MetricsCollector.save()
 
 
-async def main() -> None:
-    init()
-    logging.info(f"\n{get_line()}\n\tStarting DPCN\n{get_line()}\n\n")
+async def algo2_servicer() -> None:
+    logging.info(f"\n{get_line()}\n\tStarting DPCN - Algo 2\n{get_line()}\n\n")
 
     connection: EvmConnection = await EvmConnection.build_connection(Algorithm.ALGO2, 0)
     file_request_servicer: FileIdRequestsServicer = FileIdRequestsServicer(connection)
+    share_request_servicer: ShareRequestsServicer = ShareRequestsServicer(connection)
 
     tasks_to_be_serviced: list[Coroutine[None, None, None]] = []
     tasks_to_be_serviced.extend(file_request_servicer.get_tasks_to_run())
+    tasks_to_be_serviced.extend(share_request_servicer.get_tasks_to_run())
 
     await asyncio.gather(*tasks_to_be_serviced)
+
+
+async def algo3_servicer() -> None:
+    logging.info(f"\n{get_line()}\n\tStarting DPCN - Algo 3\n{get_line()}\n\n")
+
+    connection: EvmConnection = await EvmConnection.build_connection(Algorithm.ALGO3, 0)
+
+
+async def main() -> None:
+    init()
+
+    if len(sys.argv) == 1 or sys.argv[1] == "2":
+        await algo2_servicer()
+    elif sys.argv[1] == "3":
+        await algo3_servicer()
+    else:
+        logging.error(f"DPCN Unknown command line argument!")
 
     logging.info(f"\n{get_line()}\n\tDPCN Tearing Down\n{get_line()}\n\n")
     clean_up()

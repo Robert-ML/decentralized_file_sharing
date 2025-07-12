@@ -6,6 +6,7 @@ from shared.python.crypto.prenc.isshiki_2013 import (
     Isshiki_PrivateKey,
     Isshiki_PublicParameters,
 )
+from shared.python.crypto.utils import get_random_int
 
 from core.prenc_identity import PrencIdentity
 
@@ -14,7 +15,7 @@ def create_prenc_identity(user: str) -> PrencIdentity:
     """
     Create a new identity for re-encryption
     """
-    id: int = int.from_bytes(secrets.token_bytes(256 // 8), 'big', signed=False)
+    id: int = get_random_int()
 
     algo: Isshiki = Isshiki()
     prenc_secret_key: Isshiki_PrivateKey = algo.key_gen()
