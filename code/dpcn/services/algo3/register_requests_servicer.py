@@ -17,11 +17,11 @@ from core.common_vars import CommonVars
 from core.db import DB
 from core.prenc_identity import PrencIdentity
 from services.crypto.prenc_create_identity import create_prenc_identity
+from shared.python.crypto.utils import get_random_int
 from shared.python.evm.force_transact import force_transaction
 from shared.python.evm.connection import EvmConnection
 from shared.python.utils.asynckit import create_task_log_on_fail
 from shared.python.utils.metrics import Metric, MetricsCollector, MetricType
-from shared.python.crypto.utils import get_random_int
 
 
 _LISTEN_PERIOD: timedelta = timedelta(seconds=5)

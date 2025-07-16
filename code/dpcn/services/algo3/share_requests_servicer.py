@@ -19,6 +19,7 @@ from core.prenc_identity import PrencIdentity
 from services.crypto.prenc_create_identity import create_prenc_identity
 from shared.python.crypto.prenc.isshiki_2013 import Isshiki_PublicKey, Isshiki_ReEncKey
 from shared.python.crypto.prenc.re_encryptor import get_re_encryption_key
+from shared.python.crypto.utils import get_random_int
 from shared.python.evm.force_transact import force_transaction
 from shared.python.evm.connection import EvmConnection
 from shared.python.utils.asynckit import create_task_log_on_fail
@@ -35,10 +36,10 @@ class _FileShareData:
     """
     client: str
     file_id: int
-    re_enc_key: Isshiki_ReEncKey
+    client_accessible_sym_key: int
 
 
-class A2ShareRequestsServicer:
+class A3ShareRequestsServicer:
     def __init__(self, evm_connection: EvmConnection) -> None:
         self.__connection: EvmConnection = evm_connection
         self.__pending_responses: asyncio.Queue[_FileShareData] = asyncio.Queue()
@@ -53,23 +54,22 @@ class A2ShareRequestsServicer:
         ]
 
     async def __forever_listen_to_requests(self) -> None:
-        logging.info("Algo 2 - Starting forever listen to share requests")
+        logging.info("Algo 3 - Starting forever listen to share requests")
         await asyncio.sleep(_LISTEN_PERIOD.total_seconds())
         while CommonVars().running:
             try:
                 await self.__listen_to_requests()
             except Exception as e:
-                logging.error(f"Forever listen to requests Algo 2 gave error: {repr(e)}", exc_info=e)
+                logging.error(f"Forever listen to requests Algo 3 gave error: {repr(e)}", exc_info=e)
             await asyncio.sleep(_LISTEN_PERIOD.total_seconds())
 
     async def __listen_to_requests(self) -> None:
         # Note: it would have been nicer to return how many requests each user has
         clients: list[str]
-        file_owners: list[str]
         file_ids: list[int]
         client_prenc_pks: list[int]
 
-        clients, file_owners, file_ids, client_prenc_pks = await self.__connection.contract.functions.get_pending_share_requests().call()
+        clients, file_ids = await self.__connection.contract.functions.get_pending_share_requests().call()
         if len(clients) == 0:
             return
 
@@ -80,41 +80,27 @@ class A2ShareRequestsServicer:
             for i in range(len(clients)):
                 client: str = clients[i]
                 file_id: int = file_ids[i]
-                if (client, file_id) in self.__share_requests_being_serviced:
-                    # request is already being serviced
-                    continue
 
-                file_owner: str = file_owners[i]
-                client_prenc_pk: Isshiki_PublicKey = Isshiki_PublicKey.from_list(client_prenc_pks[i * 10 : i * 10 + 10])
-                users_servicers[(clients[i], file_ids[i])] = tg.create_task(self.__service_share_request(
+                users_servicers[(client, file_id)] = tg.create_task(self.__service_share_request(
                     client=client,
-                    file_owner=file_owner,
                     file_id=file_id,
-                    client_prenc_pk=client_prenc_pk,
                 ))
                 self.__share_requests_being_serviced.add((client, file_id))
 
 
-    async def __service_share_request(self, client: str, file_owner: str, file_id: int, client_prenc_pk: Isshiki_PublicKey) -> None:
-        file_credentials: PrencIdentity | None = DB().get_identity(file_id)
-        assert file_credentials is not None, "Could not find File ID to retrieve the identity"
-
-        re_enc_key: Isshiki_ReEncKey = get_re_encryption_key(
-            public_params=file_credentials.public_parameters,
-            owner_sk=file_credentials.secret_key,
-            client_pk=client_prenc_pk,
-        )
+    async def __service_share_request(self, client: str, file_id: int) -> None:
+        client_accessible_sym_key: int = get_random_int()
 
         await self.__pending_responses.put(_FileShareData(
             client=client,
             file_id=file_id,
-            re_enc_key=re_enc_key,
+            client_accessible_sym_key=client_accessible_sym_key,
         ))
 
 
     async def __forever_send_share_request_responses(self) -> None:
         running_tasks: set[asyncio.Future[None]] = set()
-        logging.info(f"Algo 2 - Starting forever send share request responses")
+        logging.info(f"Algo 3 - Starting forever send share request responses")
         while CommonVars().running:
             try:
                 request_response: _FileShareData = await asyncio.wait_for(self.__pending_responses.get(), timeout=_LISTEN_PERIOD.total_seconds())
@@ -125,7 +111,7 @@ class A2ShareRequestsServicer:
             except asyncio.TimeoutError:
                 pass
             except Exception as e:
-                logging.error(f"Forever send share request Algo 2 responses gave error: {repr(e)}", exc_info=e)
+                logging.error(f"Forever send share request Algo 3 responses gave error: {repr(e)}", exc_info=e)
 
             # try to clean up some done tasks
             done_tasks: set[asyncio.Future[None]] = set()
@@ -146,10 +132,10 @@ class A2ShareRequestsServicer:
 
 
     async def __send_request_response(self, request_response: _FileShareData) -> None:
-        proto_transaction = self.__connection.contract.functions.respond_with_re_encryption_key(
+        proto_transaction = self.__connection.contract.functions.respond_with_client_encrypted_sym_key(
             client=request_response.client,
             file_id=request_response.file_id,
-            re_enc_key=request_response.re_enc_key.to_list(),
+            client_accessible_sym_key=request_response.client_accessible_sym_key,
         )
 
         tx_hash: HexBytes = await force_transaction(proto_transaction, self.__connection)
@@ -174,7 +160,7 @@ class A2ShareRequestsServicer:
 
 class _MetricFileShareResponse(Metric):
     def __init__(self, client: str, file_no: int, gas_used: int) -> None:
-        super().__init__(MetricType.A2_DPCN_SHARE_REQUESTS)
+        super().__init__(MetricType.A3_DPCN_SHARE_REQUESTS)
         self._client: str = client
         self._file_no: int = file_no
         self._gas_used: int = gas_used

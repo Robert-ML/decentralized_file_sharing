@@ -7,7 +7,7 @@ import sys
 from typing import Coroutine
 
 from core.common_vars import CommonVars
-from scenarios.algo_2_3_clients_50_files import algo_2_3_clients_50_files
+from scenarios.algo_3_3_clients_50_files import algo_3_3_clients_50_files
 from scenarios.testing import testing_scenario
 from shared.python.utils.print_quicks import get_line
 from shared.python.utils.metrics import MetricsCollector
@@ -53,16 +53,15 @@ def clean_up() -> None:
     MetricsCollector.save()
 
 
-async def gather_tasks(tasks: list[Coroutine[None, None, None]]) -> None:
-    await asyncio.gather(*tasks)
-
 async def main() -> None:
     init()
-    logging.info(f"\n{get_line()}\n\tStarting Client\n{get_line()}\n\n")
+    logging.info(f"\n{get_line()}\n\tStarting Client - Algo 3\n{get_line()}\n\n")
     await asyncio.sleep(5)
 
     logging.info(f"Starting scenario")
-    await algo_2_3_clients_50_files(make_share_request=True)
+    for _ in range(10):
+        await algo_3_3_clients_50_files(make_share_request=True)
+
     # await testing_scenario()
     logging.info(f"Finished scenario")
 

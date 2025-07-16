@@ -3,7 +3,7 @@ from enum import StrEnum, auto
 
 _ABIS_FOLDER: str = "./shared/abis/"
 _ALGO2_ABI_FILE: str = "Algo2ProxyReencryption.json"
-_ALGO3_ABI_FILE: str = ""
+_ALGO3_ABI_FILE: str = "Algo3SimpleEncryption.json"
 
 
 class Algorithm(StrEnum):

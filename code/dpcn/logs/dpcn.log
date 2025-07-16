@@ -2305,3 +2305,706 @@ AttributeError: 'ShareRequestsServicer' object has no attribute '_metric_file_no
 ==================================================
 
 
+2025-07-12 17:33:26,233 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-12 17:33:26,233 main.py:75 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-12 17:35:03,176 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-12 17:35:03,177 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-12 17:36:52,237 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-12 17:36:52,237 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-12 17:38:20,447 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-12 17:38:20,447 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-12 17:39:54,666 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-12 17:39:54,666 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-12 17:41:44,313 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-12 17:41:44,313 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-12 17:41:44,326 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-12 17:41:44,326 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-12 17:41:55,297 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-12 17:41:59,350 main.py:96 [INFO] 
+==================================================
+	DPCN Tearing Down
+==================================================
+
+
+2025-07-12 17:41:59,350 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-12 17:41:59,350 metrics.py:82 [INFO] Metrics Saved
+2025-07-12 17:41:59,350 main.py:98 [INFO] 
+==================================================
+	DPCN Ended
+==================================================
+
+
+2025-07-12 21:21:30,306 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-12 21:21:30,307 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-12 21:21:30,321 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-12 21:21:30,321 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-12 21:22:45,476 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-12 21:22:45,476 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-12 21:22:45,476 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-12 21:31:49,592 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-12 21:31:51,554 main.py:96 [INFO] 
+==================================================
+	DPCN Tearing Down
+==================================================
+
+
+2025-07-12 21:31:51,554 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-12 21:31:51,556 metrics.py:82 [INFO] Metrics Saved
+2025-07-12 21:31:51,556 main.py:98 [INFO] 
+==================================================
+	DPCN Ended
+==================================================
+
+
+2025-07-12 21:32:07,171 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-12 21:32:07,171 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-12 21:32:07,181 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-12 21:32:07,181 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-12 21:32:22,216 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-12 21:32:22,216 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-12 21:32:22,216 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-13 12:37:46,455 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-13 12:37:48,155 main.py:96 [INFO] 
+==================================================
+	DPCN Tearing Down
+==================================================
+
+
+2025-07-13 12:37:48,156 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-13 12:37:48,156 metrics.py:82 [INFO] Metrics Saved
+2025-07-13 12:37:48,156 main.py:98 [INFO] 
+==================================================
+	DPCN Ended
+==================================================
+
+
+2025-07-16 14:20:06,174 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 14:20:06,174 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 14:20:06,186 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 14:20:06,186 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 14:20:26,230 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 14:20:26,230 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 14:20:26,230 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 14:24:10,174 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:24:11,515 main.py:96 [INFO] 
+==================================================
+	DPCN Tearing Down
+==================================================
+
+
+2025-07-16 14:24:11,516 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 14:24:11,516 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 14:24:11,516 main.py:98 [INFO] 
+==================================================
+	DPCN Ended
+==================================================
+
+
+2025-07-16 14:27:08,336 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 14:27:08,336 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 14:27:08,346 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 14:27:08,346 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 14:27:23,371 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 14:27:23,371 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 14:27:23,371 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 14:32:00,596 register_requests_servicer.py:61 [ERROR] Forever listen to registration requests gave error: ClientConnectorError(ConnectionKey(host='127.0.0.1', port=8545, is_ssl=False, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=None), ConnectionRefusedError(111, "Connect call failed ('127.0.0.1', 8545)"))
+Traceback (most recent call last):
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1115, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohappyeyeballs/impl.py", line 122, in start_connection
+    raise first_exception
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohappyeyeballs/impl.py", line 73, in start_connection
+    sock = await _connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohappyeyeballs/impl.py", line 208, in _connect_sock
+    await loop.sock_connect(sock, address)
+  File "/usr/lib/python3.12/asyncio/selector_events.py", line 651, in sock_connect
+    return await fut
+           ^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/selector_events.py", line 691, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 8545)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/dpcn/services/algo3/register_requests_servicer.py", line 59, in __forever_listen_to_requests
+    await self.__listen_to_requests()
+  File "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/dpcn/services/algo3/register_requests_servicer.py", line 66, in __listen_to_requests
+    users_pending_registration: list[str] = await self.__connection.contract.functions.get_users_pending_registration().call()
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/contract/async_contract.py", line 290, in call
+    return await async_call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/contract/utils.py", line 453, in async_call_contract_function
+    return_data = await async_w3.eth.call(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/eth/async_eth.py", line 262, in call
+    return await self._durin_call(transaction, block_identifier, state_override)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/eth/async_eth.py", line 281, in _durin_call
+    return await self._call(transaction, block_identifier, state_override)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/module.py", line 155, in caller
+    result = await async_w3.manager.coro_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 439, in coro_request
+    response = await self._coro_make_request(method, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 366, in _coro_make_request
+    return await request_func(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 97, in middleware
+    method, params = await self.async_request_processor(method, params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/formatting.py", line 182, in async_request_processor
+    await self.async_formatters_builder(
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/validation.py", line 156, in async_build_method_validators
+    w3_chain_id = await async_w3.eth.chain_id
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/eth/async_eth.py", line 166, in chain_id
+    return await self._chain_id()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/module.py", line 155, in caller
+    result = await async_w3.manager.coro_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 439, in coro_request
+    response = await self._coro_make_request(method, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 366, in _coro_make_request
+    return await request_func(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/_utils/caching/caching_utils.py", line 367, in wrapper
+    return await func(provider, method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/providers/rpc/async_rpc.py", line 161, in make_request
+    raw_response = await self._make_request(method, request_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/providers/rpc/async_rpc.py", line 138, in _make_request
+    return await self._request_session_manager.async_make_post_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/_utils/http_session_manager.py", line 313, in async_make_post_request
+    response = await self.async_get_response_from_post_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/_utils/http_session_manager.py", line 298, in async_get_response_from_post_request
+    response = await session.post(endpoint_uri, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1406, in _create_direct_connection
+    raise last_exc
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1375, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1130, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 127.0.0.1:8545 ssl:default [Connect call failed ('127.0.0.1', 8545)]
+2025-07-16 14:32:00,668 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:32:01,260 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:32:01,260 main.py:41 [ERROR] SIGINT received a second time, closing forcefully with clean-up
+2025-07-16 14:32:01,260 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 14:32:01,260 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 14:33:00,583 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 14:33:00,585 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 14:33:00,595 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 14:33:00,595 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 14:33:20,625 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 14:33:20,625 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 14:33:20,625 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 14:33:40,236 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:33:40,488 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:33:40,488 main.py:41 [ERROR] SIGINT received a second time, closing forcefully with clean-up
+2025-07-16 14:33:40,488 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 14:33:40,488 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 14:34:46,693 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 14:34:46,693 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 14:34:46,702 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 14:34:46,702 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 14:34:56,718 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 14:34:56,718 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 14:34:56,718 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 14:36:23,707 register_requests_servicer.py:61 [ERROR] Forever listen to registration requests gave error: ClientConnectorError(ConnectionKey(host='127.0.0.1', port=8545, is_ssl=False, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=None), ConnectionRefusedError(111, "Connect call failed ('127.0.0.1', 8545)"))
+Traceback (most recent call last):
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1115, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohappyeyeballs/impl.py", line 122, in start_connection
+    raise first_exception
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohappyeyeballs/impl.py", line 73, in start_connection
+    sock = await _connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohappyeyeballs/impl.py", line 208, in _connect_sock
+    await loop.sock_connect(sock, address)
+  File "/usr/lib/python3.12/asyncio/selector_events.py", line 651, in sock_connect
+    return await fut
+           ^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/selector_events.py", line 691, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 8545)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/dpcn/services/algo3/register_requests_servicer.py", line 59, in __forever_listen_to_requests
+    await self.__listen_to_requests()
+  File "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/dpcn/services/algo3/register_requests_servicer.py", line 66, in __listen_to_requests
+    users_pending_registration: list[str] = await self.__connection.contract.functions.get_users_pending_registration().call()
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/contract/async_contract.py", line 290, in call
+    return await async_call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/contract/utils.py", line 453, in async_call_contract_function
+    return_data = await async_w3.eth.call(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/eth/async_eth.py", line 262, in call
+    return await self._durin_call(transaction, block_identifier, state_override)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/eth/async_eth.py", line 281, in _durin_call
+    return await self._call(transaction, block_identifier, state_override)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/module.py", line 155, in caller
+    result = await async_w3.manager.coro_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 439, in coro_request
+    response = await self._coro_make_request(method, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 366, in _coro_make_request
+    return await request_func(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 97, in middleware
+    method, params = await self.async_request_processor(method, params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/formatting.py", line 182, in async_request_processor
+    await self.async_formatters_builder(
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/validation.py", line 156, in async_build_method_validators
+    w3_chain_id = await async_w3.eth.chain_id
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/eth/async_eth.py", line 166, in chain_id
+    return await self._chain_id()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/module.py", line 155, in caller
+    result = await async_w3.manager.coro_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 439, in coro_request
+    response = await self._coro_make_request(method, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 366, in _coro_make_request
+    return await request_func(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/_utils/caching/caching_utils.py", line 367, in wrapper
+    return await func(provider, method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/providers/rpc/async_rpc.py", line 161, in make_request
+    raw_response = await self._make_request(method, request_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/providers/rpc/async_rpc.py", line 138, in _make_request
+    return await self._request_session_manager.async_make_post_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/_utils/http_session_manager.py", line 313, in async_make_post_request
+    response = await self.async_get_response_from_post_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/_utils/http_session_manager.py", line 298, in async_get_response_from_post_request
+    response = await session.post(endpoint_uri, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1406, in _create_direct_connection
+    raise last_exc
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1375, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1130, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 127.0.0.1:8545 ssl:default [Connect call failed ('127.0.0.1', 8545)]
+2025-07-16 14:36:24,051 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:36:24,351 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:36:24,351 main.py:41 [ERROR] SIGINT received a second time, closing forcefully with clean-up
+2025-07-16 14:36:24,351 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 14:36:24,352 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 14:36:42,132 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 14:36:42,133 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 14:36:42,143 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 14:36:42,143 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 14:36:52,158 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 14:36:52,158 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 14:36:52,158 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 14:37:27,836 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:37:28,023 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:37:28,024 main.py:41 [ERROR] SIGINT received a second time, closing forcefully with clean-up
+2025-07-16 14:37:28,024 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 14:37:28,024 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 14:39:36,518 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 14:39:36,518 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 14:39:36,528 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 14:39:36,528 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 14:39:46,542 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 14:39:46,542 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 14:39:46,542 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 14:40:12,230 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:40:12,406 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:40:12,406 main.py:41 [ERROR] SIGINT received a second time, closing forcefully with clean-up
+2025-07-16 14:40:12,407 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 14:40:12,407 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 14:44:32,189 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 14:44:32,189 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 14:44:32,200 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 14:44:32,200 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 14:45:59,185 register_requests_servicer.py:61 [ERROR] Forever listen to registration requests gave error: ClientConnectorError(ConnectionKey(host='127.0.0.1', port=8545, is_ssl=False, ssl=True, proxy=None, proxy_auth=None, proxy_headers_hash=None), ConnectionRefusedError(111, "Connect call failed ('127.0.0.1', 8545)"))
+Traceback (most recent call last):
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1115, in _wrap_create_connection
+    sock = await aiohappyeyeballs.start_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohappyeyeballs/impl.py", line 122, in start_connection
+    raise first_exception
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohappyeyeballs/impl.py", line 73, in start_connection
+    sock = await _connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohappyeyeballs/impl.py", line 208, in _connect_sock
+    await loop.sock_connect(sock, address)
+  File "/usr/lib/python3.12/asyncio/selector_events.py", line 651, in sock_connect
+    return await fut
+           ^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/selector_events.py", line 691, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 8545)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/dpcn/services/algo3/register_requests_servicer.py", line 59, in __forever_listen_to_requests
+    await self.__listen_to_requests()
+  File "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/dpcn/services/algo3/register_requests_servicer.py", line 66, in __listen_to_requests
+    users_pending_registration: list[str] = await self.__connection.contract.functions.get_users_pending_registration().call()
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/contract/async_contract.py", line 290, in call
+    return await async_call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/contract/utils.py", line 453, in async_call_contract_function
+    return_data = await async_w3.eth.call(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/eth/async_eth.py", line 262, in call
+    return await self._durin_call(transaction, block_identifier, state_override)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/eth/async_eth.py", line 281, in _durin_call
+    return await self._call(transaction, block_identifier, state_override)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/module.py", line 155, in caller
+    result = await async_w3.manager.coro_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 439, in coro_request
+    response = await self._coro_make_request(method, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 366, in _coro_make_request
+    return await request_func(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 97, in middleware
+    method, params = await self.async_request_processor(method, params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/formatting.py", line 182, in async_request_processor
+    await self.async_formatters_builder(
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/validation.py", line 156, in async_build_method_validators
+    w3_chain_id = await async_w3.eth.chain_id
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/eth/async_eth.py", line 166, in chain_id
+    return await self._chain_id()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/module.py", line 155, in caller
+    result = await async_w3.manager.coro_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 439, in coro_request
+    response = await self._coro_make_request(method, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/manager.py", line 366, in _coro_make_request
+    return await request_func(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/middleware/base.py", line 100, in middleware
+    await make_request(method, params),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/_utils/caching/caching_utils.py", line 367, in wrapper
+    return await func(provider, method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/providers/rpc/async_rpc.py", line 161, in make_request
+    raw_response = await self._make_request(method, request_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/providers/rpc/async_rpc.py", line 138, in _make_request
+    return await self._request_session_manager.async_make_post_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/_utils/http_session_manager.py", line 313, in async_make_post_request
+    response = await self.async_get_response_from_post_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/web3/_utils/http_session_manager.py", line 298, in async_get_response_from_post_request
+    response = await session.post(endpoint_uri, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1406, in _create_direct_connection
+    raise last_exc
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1375, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robert/school/master/thesis/code/dpcn/venv/lib/python3.12/site-packages/aiohttp/connector.py", line 1130, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 127.0.0.1:8545 ssl:default [Connect call failed ('127.0.0.1', 8545)]
+2025-07-16 14:46:02,380 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:46:02,529 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:46:02,529 main.py:41 [ERROR] SIGINT received a second time, closing forcefully with clean-up
+2025-07-16 14:46:02,529 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 14:46:02,529 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 14:46:45,033 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 14:46:45,033 main.py:76 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 14:46:45,042 main.py:79 [INFO] Initialized DPCN client with address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-07-16 14:46:45,043 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 14:46:45,043 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 14:59:32,665 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:59:32,793 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 14:59:32,793 main.py:41 [ERROR] SIGINT received a second time, closing forcefully with clean-up
+2025-07-16 14:59:32,793 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 14:59:32,794 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 14:59:52,733 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 14:59:52,733 main.py:78 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 14:59:52,743 main.py:81 [INFO] Initialized DPCN Algo 3 with address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-07-16 14:59:52,743 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 14:59:52,743 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 15:00:07,774 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 15:00:07,775 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 15:00:07,775 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 15:01:12,300 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 15:01:12,465 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 15:01:12,465 main.py:41 [ERROR] SIGINT received a second time, closing forcefully with clean-up
+2025-07-16 15:01:12,465 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 15:01:12,466 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 15:01:34,423 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 15:01:34,423 main.py:78 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 15:01:34,436 main.py:81 [INFO] Initialized DPCN Algo 3 with address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-07-16 15:01:34,437 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 15:01:34,437 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 15:01:49,470 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 15:01:49,470 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 15:01:49,471 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 15:02:15,845 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 15:02:19,523 main.py:100 [INFO] 
+==================================================
+	DPCN Tearing Down
+==================================================
+
+
+2025-07-16 15:02:19,523 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 15:02:19,524 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 15:02:19,524 main.py:102 [INFO] 
+==================================================
+	DPCN Ended
+==================================================
+
+
+2025-07-16 15:03:21,845 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 15:03:21,845 main.py:78 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 15:03:21,855 main.py:81 [INFO] Initialized DPCN Algo 3 with address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-07-16 15:03:21,855 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 15:03:21,855 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 15:03:41,889 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 15:03:41,889 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 15:03:41,889 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 15:10:53,924 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 15:10:54,080 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 15:10:54,080 main.py:41 [ERROR] SIGINT received a second time, closing forcefully with clean-up
+2025-07-16 15:10:54,080 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 15:10:54,080 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 15:41:54,028 db.py:48 [INFO] DB: Loaded file successfully
+2025-07-16 15:41:54,028 main.py:78 [INFO] 
+==================================================
+	Starting DPCN - Algo 3
+==================================================
+
+
+2025-07-16 15:41:54,038 main.py:81 [INFO] Initialized DPCN Algo 3 with address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-07-16 15:41:54,038 register_requests_servicer.py:55 [INFO] Starting forever listen to registration requests
+2025-07-16 15:41:54,038 register_requests_servicer.py:95 [INFO] Starting forever send registration request responses
+2025-07-16 15:42:09,063 register_requests_servicer.py:70 [INFO] Found 2 users requesting files
+2025-07-16 15:42:09,063 register_requests_servicer.py:99 [INFO] User "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": sending registration request response
+2025-07-16 15:42:09,063 register_requests_servicer.py:99 [INFO] User "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": sending registration request response
+2025-07-16 16:23:10,562 main.py:36 [INFO] SIGINT received, tear down commencing
+2025-07-16 16:23:15,106 main.py:100 [INFO] 
+==================================================
+	DPCN Tearing Down
+==================================================
+
+
+2025-07-16 16:23:15,106 metrics.py:73 [INFO] Saving Metrics Collected
+2025-07-16 16:23:15,107 metrics.py:82 [INFO] Metrics Saved
+2025-07-16 16:23:15,107 main.py:102 [INFO] 
+==================================================
+	DPCN Ended
+==================================================
+
+

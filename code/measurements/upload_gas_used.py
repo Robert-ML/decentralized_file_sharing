@@ -67,6 +67,21 @@ class PreparedData:
     def values(self) -> list[int]:
         return [entry.gas_used for entry in self.data]
 
+    def indexes_chunked(self, chunks: int) -> list[int]:
+        return list(range(1, len(self.data) // chunks + 1))
+
+    def values_chunked(self, chunks: int) -> list[int]:
+        chunk_size: int = len(self.data) // chunks
+
+        data: list[int] = []
+        for i in range(chunk_size):
+            s: int = 0
+            for j in range(chunks):
+                s += self.data[j * chunks + i].gas_used
+            data.append(s // chunks)
+
+        return data
+
 
 def load_data() -> LoadedData:
     client_file_upload_data: Path = DATA_ALGO_2_CLIENT_FOLDER / MetricType.A2_CLIENT_FILE_UPLOAD.get_file_name()
@@ -82,7 +97,7 @@ def load_data() -> LoadedData:
 
 
 def prepare_data(loaded_data: LoadedData) -> PreparedData:
-    prepared_data: list[GasData] = []
+    merged_data: list[GasData] = []
 
     request_id: int
     client_data_point: GasData
@@ -91,19 +106,19 @@ def prepare_data(loaded_data: LoadedData) -> PreparedData:
             print(f"Missing entry in DPCN, request_id = \"{request_id}\"")
             continue
         dpcn_data_point: GasData = loaded_data.dpcn[request_id]
-        prepared_data.append(GasData(
+        merged_data.append(GasData(
             gas_used=client_data_point.gas_used + dpcn_data_point.gas_used,
             request_id=request_id,
             user=client_data_point.user,
         ))
 
-    return PreparedData(prepared_data)
+    return PreparedData(merged_data)
 
 
 def plot_data(data: PreparedData) -> None:
     # Plotting
     plt.figure(figsize=(10, 5))
-    plt.plot(data.indexes, data.values, marker='o', linestyle='-', color='blue', label='Gas Used')
+    plt.plot(data.indexes_chunked(10), data.values_chunked(10), marker='o', linestyle='-', color='blue', label='Gas Used')
 
     # Add a horizontal line showing the mean for reference
     mean_y = sum(data.values) / len(data.values)

@@ -42,29 +42,23 @@ class FileShareRequester:
             self.__forever_listen_for_serviced_share_requests()
         ]
 
-    async def create_file_share_request(self, file_owner_address: ChecksumAddress, file_details: FilePrencCredentials) -> None:
-        logging.info(f"Client \"{self.__connection.account.address}\" requesting share of file with ID: {file_details.file_id}")
-
-        client_prenc = PrencEncryptor(file_details.encryptor.public_parameters)
+    async def create_file_share_request(self, file_id: int) -> None:
+        logging.info(f"Client \"{self.__connection.account.address}\" requesting share of file with ID: {file_id}")
 
         gas_used: int = await self.__send_file_share_request(
-            client_prenc_pk=client_prenc.public_key.to_list(),
-            file_owner_address=file_owner_address,
-            file_id=file_details.file_id,
+            file_id=file_id,
         )
 
         MetricsCollector.add(_MetricClientShareRequest(
             user=self.__connection.account.address,
-            request_id=f"{file_owner_address}|{file_details.file_id}",
+            request_id=f"{self.__connection.account.address}|{file_id}",
             gas_used=gas_used,
         ))
 
 
-    async def __send_file_share_request(self, client_prenc_pk: list[int], file_owner_address: ChecksumAddress, file_id: int) -> int:
+    async def __send_file_share_request(self, file_id: int) -> int:
         proto_transaction = self.__connection.contract.functions.request_file_share(
             client=self.__connection.account.address,
-            client_prenc_pk=client_prenc_pk,
-            file_owner=file_owner_address,
             file_id=file_id,
         )
 
@@ -105,7 +99,7 @@ class FileShareRequester:
 
 class _MetricClientShareRequest(Metric):
     def __init__(self, user: str, request_id: str, gas_used: int) -> None:
-        super().__init__(MetricType.A2_CLIENT_SHARE_REQUEST)
+        super().__init__(MetricType.A3_CLIENT_SHARE_REQUEST)
         self._user: str = user
         self._request_id: str = request_id
         self._gas_used: int = gas_used

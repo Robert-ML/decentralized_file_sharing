@@ -9,7 +9,8 @@ from typing import Coroutine
 from core.common_vars import CommonVars
 from core.db import DB
 from services.algo2.file_requests_servicer import FileIdRequestsServicer
-from services.algo2.share_requests_servicer import ShareRequestsServicer
+from services.algo2.share_requests_servicer import A2ShareRequestsServicer
+from services.algo3.register_requests_servicer import RegisterRequestsServicer
 from shared.python.evm.algorithms import Algorithm
 from shared.python.evm.connection import EvmConnection
 from shared.python.utils.print_quicks import get_line
@@ -61,8 +62,10 @@ async def algo2_servicer() -> None:
     logging.info(f"\n{get_line()}\n\tStarting DPCN - Algo 2\n{get_line()}\n\n")
 
     connection: EvmConnection = await EvmConnection.build_connection(Algorithm.ALGO2, 0)
+    logging.info(f"Initialized DPCN Algo 2 with address: {connection.account.address}")
+
     file_request_servicer: FileIdRequestsServicer = FileIdRequestsServicer(connection)
-    share_request_servicer: ShareRequestsServicer = ShareRequestsServicer(connection)
+    share_request_servicer: A2ShareRequestsServicer = A2ShareRequestsServicer(connection)
 
     tasks_to_be_serviced: list[Coroutine[None, None, None]] = []
     tasks_to_be_serviced.extend(file_request_servicer.get_tasks_to_run())
@@ -75,6 +78,13 @@ async def algo3_servicer() -> None:
     logging.info(f"\n{get_line()}\n\tStarting DPCN - Algo 3\n{get_line()}\n\n")
 
     connection: EvmConnection = await EvmConnection.build_connection(Algorithm.ALGO3, 0)
+    logging.info(f"Initialized DPCN Algo 3 with address: {connection.account.address}")
+
+    registration_servicer: RegisterRequestsServicer = RegisterRequestsServicer(connection)
+    tasks_to_be_serviced: list[Coroutine[None, None, None]] = []
+    tasks_to_be_serviced.extend(registration_servicer.get_tasks_to_run())
+
+    await asyncio.gather(*tasks_to_be_serviced)
 
 
 async def main() -> None:

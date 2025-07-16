@@ -53,12 +53,9 @@ def clean_up() -> None:
     MetricsCollector.save()
 
 
-async def gather_tasks(tasks: list[Coroutine[None, None, None]]) -> None:
-    await asyncio.gather(*tasks)
-
 async def main() -> None:
     init()
-    logging.info(f"\n{get_line()}\n\tStarting Client\n{get_line()}\n\n")
+    logging.info(f"\n{get_line()}\n\tStarting Client - Algo 2\n{get_line()}\n\n")
     await asyncio.sleep(5)
 
     logging.info(f"Starting scenario")
