@@ -11,6 +11,9 @@ from typing import Any
 from shared.python.utils.metrics import MetricType
 
 
+CHUNKS: int = 5
+
+
 DATA_ALGO_2_CLIENT_FOLDER: Path = Path("./data/algo2_client/")
 DATA_DPCN_FOLDER: Path = Path("./data/dpcn/")
 
@@ -22,6 +25,21 @@ def assert_field[T](dict: dict[str, Any], field: str, type: type[T]) -> T:
 
 def indexes(length: int) -> list[int]:
     return list(range(1, length + 1))
+
+def indexes_chunked(length: int, chunks: int) -> list[int]:
+    return list(range(1, length // chunks + 1))
+
+def values_chunked(data: list[int], chunks: int) -> list[int]:
+    chunk_size: int = len(data) // chunks
+
+    chunked_data: list[int] = []
+    for i in range(chunk_size):
+        s: int = 0
+        for j in range(chunks):
+            s += data[j * chunks + i]
+        chunked_data.append(s // chunks)
+
+    return chunked_data
 
 
 def load_client_share_data() -> dict[str, int]:
@@ -58,24 +76,12 @@ def load_dpcn_share_data() -> dict[str, int]:
     return ret
 
 
-def main():
-    # load data
-    client_share_data: dict[str, int] = load_client_share_data()
-    dpcn_share_data: dict[str, int] = load_dpcn_share_data()
-
-    plot_data(
-        client_share_data=client_share_data,
-        dpcn_share_data=dpcn_share_data,
-    )
-
-
 def plot_data(client_share_data: dict[str, int], dpcn_share_data: dict[str, int]) -> None:
-
     # Plotting
     plt.figure(figsize=(10, 5))
 
-    plt.plot(indexes(len(client_share_data)), list(client_share_data.values()), marker='o', linestyle='-', color='blue', label='Gas Used by Client During Share Request')
-    plt.plot(indexes(len(dpcn_share_data)), list(dpcn_share_data.values()), marker='o', linestyle='-', color='red', label='Gas Used by DPCN During Share Request')
+    plt.plot(indexes_chunked(len(client_share_data), CHUNKS), values_chunked(list(client_share_data.values()), CHUNKS), marker='o', linestyle='-', color='blue', label='Gas Used by Client During Share Request')
+    plt.plot(indexes_chunked(len(dpcn_share_data), CHUNKS), values_chunked(list(dpcn_share_data.values()), CHUNKS), marker='o', linestyle='-', color='red', label='Gas Used by DPCN During Share Request')
 
 
     # Add labels and title
@@ -87,6 +93,17 @@ def plot_data(client_share_data: dict[str, int], dpcn_share_data: dict[str, int]
 
     plt.tight_layout()
     plt.show()
+
+
+def main():
+    # load data
+    client_share_data: dict[str, int] = load_client_share_data()
+    dpcn_share_data: dict[str, int] = load_dpcn_share_data()
+
+    plot_data(
+        client_share_data=client_share_data,
+        dpcn_share_data=dpcn_share_data,
+    )
 
 
 if __name__ == "__main__":

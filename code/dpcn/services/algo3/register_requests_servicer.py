@@ -150,7 +150,7 @@ class RegisterRequestsServicer:
 
 class _MetricDPCNRequestResponse(Metric):
     def __init__(self, user: str, request_no: int, gas_used: int) -> None:
-        super().__init__(MetricType.A2_DPCN_SERVICED_REQUESTS)
+        super().__init__(MetricType.A3_DPCN_SERVICED_REQUESTS)
         self._user: str = user
         self._request_no: int = request_no
         self._gas_used: int = gas_used

@@ -59,7 +59,10 @@ async def main() -> None:
     await asyncio.sleep(5)
 
     logging.info(f"Starting scenario")
-    await algo_2_3_clients_50_files(make_share_request=True)
+
+    for i in range(10):
+        await algo_2_3_clients_50_files(make_share_request=True)
+
     # await testing_scenario()
     logging.info(f"Finished scenario")
 

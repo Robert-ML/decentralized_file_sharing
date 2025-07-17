@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/robert/school/master/thesis/github/decentralized_file_sharing/code/algo2_evm/contracts/crypto_datamodel.sol": {
-      "lastModificationDate": 1749760477540,
-      "contentHash": "828aa074416acd7b5a6289912f93dfd6",
+      "lastModificationDate": 1752672373461,
+      "contentHash": "2a00d3060bf18e9027bd2848047a520f",
       "sourceName": "contracts/crypto_datamodel.sol",
       "solcConfig": {
         "version": "0.8.28",

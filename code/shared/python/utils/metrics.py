@@ -96,5 +96,6 @@ class MetricsCollector(metaclass=SingletonMeta):
 
         output: str = json.dumps(output_list)
 
+        logging.info(f"Saving metric to file {file_name}")
         with file_path.open("w") as f:
             f.write(output)
