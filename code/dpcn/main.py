@@ -11,6 +11,7 @@ from core.db import DB
 from services.algo2.file_requests_servicer import FileIdRequestsServicer
 from services.algo2.share_requests_servicer import A2ShareRequestsServicer
 from services.algo3.register_requests_servicer import RegisterRequestsServicer
+from services.algo3.share_requests_servicer import A3ShareRequestsServicer
 from shared.python.evm.algorithms import Algorithm
 from shared.python.evm.connection import EvmConnection
 from shared.python.utils.print_quicks import get_line
@@ -81,8 +82,11 @@ async def algo3_servicer() -> None:
     logging.info(f"Initialized DPCN Algo 3 with address: {connection.account.address}")
 
     registration_servicer: RegisterRequestsServicer = RegisterRequestsServicer(connection)
+    share_request_servicer: A3ShareRequestsServicer = A3ShareRequestsServicer(connection)
+
     tasks_to_be_serviced: list[Coroutine[None, None, None]] = []
     tasks_to_be_serviced.extend(registration_servicer.get_tasks_to_run())
+    tasks_to_be_serviced.extend(share_request_servicer.get_tasks_to_run())
 
     await asyncio.gather(*tasks_to_be_serviced)
 
